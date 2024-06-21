@@ -1,0 +1,70 @@
+.pseudo-text-effect {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    transition: transform .5s;
+
+    &::after {
+        content: attr(data-after);
+        display: inline-block;
+        transform: translateY(100%);
+        position: absolute;
+        left: 0;
+        transition: inherit;
+    }
+
+    >span {
+        display: inline-block;
+        transform: translateY(0%);
+        transition: inherit;
+    }
+
+    &:hover {
+        >span {
+            transform: translateY(-100%);
+        }
+
+        &::after {
+            transform: translateY(0%);
+        }
+    }
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.stairs{
+    .transition-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        pointer-events: none;
+        z-index: 30;
+        div{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-color: #222222;
+        }
+    }
+    .transition-background{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #222222;
+        z-index: 40;
+        pointer-events: none;
+    }
+}

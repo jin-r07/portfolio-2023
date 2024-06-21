@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "MADETOMMY_Regular";
+    src: url("../../public/fonts/MADE TOMMY Regular_PERSONAL USE.woff2") format("woff2");
+}
+
+*::selection {
+    background-color: #5045E9;
+    color: #FFFFFF;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.link-dark::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #222222;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+
+.link-dark:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink-animation {
+    animation: blink 1s linear infinite;
+}
+
+.btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #443ac9;
+    /* #B4F409 */
+    z-index: -1;
+    transition: 0.8s;
+}
+
+.btn:hover::before {
+    height: 100%;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+    border: none;
+}
+
+#video-laptop {
+    position: relative;
+    padding-top: 10vw;
+    padding-bottom: 67.5%;
+    height: 0;
+}
+
+#video-laptop video {
+    background: url('../../public/images/assets/Macbook\ Pro\ 15.png') center center no-repeat;
+    background-size: contain;
+    padding: 2% 2% 3% 2%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
